@@ -22,8 +22,8 @@ int main()
             odds.push_back(array[i]);
     }
 
-    bubble_sort(evens, false);
-    bubble_sort(odds, true);
+    bubble_sort(evens, true);
+    bubble_sort(odds, false);
 
     vector<int> merged;
     for (long unsigned int i = 0; i < evens.size(); i++)
@@ -56,12 +56,12 @@ void bubble_sort(vector<int> &array, bool asc)
         {
             if (asc)
             {
-                if (array[j] < array[j + 1])
+                if (array[j] > array[j + 1])
                     swap(array[j], array[j + 1]);
             }
             else
             {
-                if (array[j] > array[j + 1])
+                if (array[j] < array[j + 1])
                     swap(array[j], array[j + 1]);
             }
         }
